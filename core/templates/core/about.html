@@ -1,0 +1,153 @@
+{% extends 'core/base.html'%}
+{% load static %}
+
+{% block contenido %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>About</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--===============================================================================================-->	
+	<link rel="icon" type="image/png" href="images/icons/favicon.png"/>
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="fonts/iconic/css/material-design-iconic-font.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="fonts/linearicons-v1.0.0/icon-font.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/animate/animate.css">
+<!--===============================================================================================-->	
+	<link rel="stylesheet" type="text/css" href="vendor/css-hamburgers/hamburgers.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/animsition/css/animsition.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/select2/select2.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/perfect-scrollbar/perfect-scrollbar.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="css/util.css">
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+<!--===============================================================================================-->
+</head>
+<body class="animsition">
+	
+
+	<!-- Content page -->
+	<section class="bg0 p-t-75 p-b-120">
+		<div class="container">
+			<div class="row p-b-148">
+				<div class="col-md-7 col-lg-8">
+					<div class="p-t-7 p-r-85 p-r-15-lg p-r-0-md">
+						<h3 class="mtext-111 cl2 p-b-16">
+							Nuestra historia
+						</h3>
+
+						<p class="stext-113 cl6 p-b-26">
+							
+							El Grupo Cero, una cooperativa de artistas plásticos, ha establecido un taller y una sala de exhibición gracias a su trabajo colaborativo.
+						</p>
+
+						<p class="stext-113 cl6 p-b-26">
+						</p>
+
+						<p class="stext-113 cl6 p-b-26">
+							Any questions? Let us know in store at 8th floor, 379 Hudson St, New York, NY 10018 or call us on (+1) 96 716 6879
+						</p>
+					</div>
+				</div>
+
+				<div class="col-11 col-md-5 col-lg-4 m-lr-auto">
+					<div class="how-bor1 ">
+						<div class="hov-img0">
+							<img src="{% static 'core/images/about1.jpg' %}" alt="IMG">
+						</div>
+					</div>
+				</div>
+			</div>
+			
+			<div class="row">
+				<div class="order-md-2 col-md-7 col-lg-8 p-b-30">
+					<div class="p-t-7 p-l-85 p-l-15-lg p-l-0-md">
+						<h3 class="mtext-111 cl2 p-b-16">
+							Nuestra mision
+						</h3>
+
+						<p class="stext-113 cl6 p-b-26">
+							La misión de El Grupo Cero es celebrar la diversidad y la creatividad en el arte, proporcionando un espacio inclusivo y accesible donde artistas de diversas disciplinas puedan mostrar sus obras. Nos esforzamos por promover el diálogo cultural, inspirar a la comunidad y fomentar el aprecio por el arte en todas sus formas. A través de esta exposición, buscamos enriquecer la experiencia humana, estimulando la reflexión, la conexión emocional y la exploración estética."
+
+						</p>
+
+						<div class="bor16 p-l-29 p-b-9 m-t-22">
+							<p class="stext-114 cl6 p-r-40 p-b-11">
+								“El arte es una línea alrededor de tus pensamientos”
+							</p>
+
+							<span class="stext-111 cl8">
+								- Gustav Klimt 
+							</span>
+						</div>
+					</div>
+				</div>
+
+				<div class="order-md-1 col-11 col-md-5 col-lg-4 m-lr-auto p-b-30">
+					<div class="how-bor2">
+						<div class="hov-img0">
+							<img src="{% static 'core/images/about2.jpg' %}" alt="IMG">
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>	
+	
+		
+
+
+<!--===============================================================================================-->	
+	<script src="{% static 'core/vendor/jquery/jquery-3.2.1.min.js'   %}"></script>
+<!--===============================================================================================-->
+	<script src="{% static 'core/vendor/animsition/js/animsition.min.js'   %}"></script>
+<!--===============================================================================================-->
+	<script src="{% static 'core/vendor/bootstrap/js/popper.js'   %}"></script>
+	<script src="{% static 'core/vendor/bootstrap/js/bootstrap.min.js'   %}"></script>
+<!--===============================================================================================-->
+	<script src="{% static 'core/vendor/select2/select2.min.js'   %}"></script>
+	<script>
+		$(".js-select2").each(function(){
+			$(this).select2({
+				minimumResultsForSearch: 20,
+				dropdownParent: $(this).next('.dropDownSelect2')
+			});
+		})
+	</script>
+<!--===============================================================================================-->
+	<script src="{% static 'core/vendor/MagnificPopup/jquery.magnific-popup.min.js'   %}"></script>
+<!--===============================================================================================-->
+	<script src="{% static 'core/vendor/perfect-scrollbar/perfect-scrollbar.min.js'   %}"></script>
+	<script>
+		$('.js-pscroll').each(function(){
+			$(this).css('position','relative');
+			$(this).css('overflow','hidden');
+			var ps = new PerfectScrollbar(this, {
+				wheelSpeed: 1,
+				scrollingThreshold: 1000,
+				wheelPropagation: false,
+			});
+
+			$(window).on('resize', function(){
+				ps.update();
+			})
+		});
+	</script>
+<!--===============================================================================================-->
+	<script src="{% static 'core/js/main.js'   %}"></script>
+	
+</body>
+</html>
+
+
+{% endblock  %}

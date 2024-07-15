@@ -1,0 +1,42 @@
+{% extends 'core/base.html'%}
+{% load static %}
+
+{% block css %}
+
+>
+{% endblock css %}
+{% block contenido %}
+<div class="container mt-5">
+    <h3 class="t1 text-center">Resultados de la búsqueda:</h3>
+    <div class="row mt-5 mb-5">
+        {% for producto in productos %}
+            <div class="col-md-4 mb-4">
+                <div class="card h-80 ">
+                    {% if producto.imagen %}
+                        <img src="{{ producto.imagen.url }}" class="card-img-top" alt="{{ producto.nombre }}" width="200" height="300">
+                    {% endif %}
+                    <div class="card-body">
+                        <h6 class="card-title"><strong>Nombre: </strong>{{ producto.nombre }}</h6>
+                        <p class="card-text"><strong>Descripción: </strong>{{ producto.descripcion }}</p>
+                        <p class="card-text"><strong>Precio: </strong> ${{ producto.precio }}</p>
+                        <p class="card-text"><strong>Técnica:</strong> {{ producto.tecnica.tecnica }}</p>
+                        <p class="card-text"><strong>Stock:</strong> {{ producto.stock }}</p>
+                    </div>
+                    <button type="button" class="btn btn-outline-dark">Agregar al carro</button>
+                </div>
+            </div>
+        {% empty %}
+            <div class="col-12">
+                <div class="alert alert-info" role="alert">
+                  
+                    <h1 class="text-center">No se encontraron productos.</h1>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+</div>
+
+
+
+
+{% endblock %}

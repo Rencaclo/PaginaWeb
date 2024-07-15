@@ -1,0 +1,35 @@
+{% extends 'core/base.html'%}
+{% load static %}
+{% block css %}
+		
+{% endblock %}
+{% block contenido %}
+{% load crispy_forms_tags %}
+
+<section class="vh-90 mb-5">
+  <div class="container py-5 h-100">
+    <div class="row d-flex align-items-center justify-content-center h-100">
+      <div class="col-md-8 col-lg-7 col-xl-6">
+        <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/draw2.svg"
+          class="img-fluid" alt="Phone image">
+      </div>
+      <div class="col-md-7 col-lg-5 col-xl-5 offset-xl-1">
+    
+        <form method="POST" >
+            {% csrf_token %}
+            {{ form| crispy }}
+         
+            <input type="submit" class="btn btn-success mb-5" value="Registrarse">
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% endblock %}
+
+
+{% block js %}
+
+
+{% endblock js %}

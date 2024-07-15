@@ -1,0 +1,41 @@
+{% extends 'core/base.html' %}
+{% load static %}
+{% block contenido %}
+
+<!-- PRODUCTOS -->
+<div class="container mt-5 text-center">
+    <h1 class="mt-5">Listado de Productos</h1>
+</div>
+
+<div class="container">
+    <div class="row justify-content-center">
+        <!-- Producto -->
+        {% for aux in listaProductos %}
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-4">
+                <div class="card h-100">
+                    <img src="{{ aux.imagen.url }}" class="card-img-top" alt="{{ aux.nombre }}">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ aux.nombre }}</h5>
+                        <p class="card-text">{{ aux.precio }}</p>
+                        <p class="card-text">Stock: {{ aux.stock }}</p>
+                        <!-- Formulario para agregar al carrito -->
+                        <form action="" method="POST">
+                            {% csrf_token %}
+                            <input type="hidden" name="codigo_producto" value="{{ aux.codigo_producto }}">
+                            <input type="hidden" name="nombre" value="{{ aux.nombre }}">
+                            <input type="hidden" name="precio" value="{{ aux.precio }}">
+                            <input type="hidden" name="imagen" value="{{ aux.imagen }}">
+                            <button type="submit" class="button" onclick="success()" >
+                                <span class="buttontext">Agregar</span>
+                                <span class="buttonicon"><svg xmlns="http://www.w3.org/2000/svg" width="24" viewBox="0 0 24 24" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" stroke="currentColor" height="24" fill="none" class="svg">
+                                <line y2="19" y1="5" x2="12" x1="12"></line><line y2="12" y1="12" x2="19" x1="5"></line></svg></span>
+                            </button>
+        
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+        {% endfor %}
+{% endblock %}
+	

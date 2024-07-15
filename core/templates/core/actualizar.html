@@ -1,0 +1,28 @@
+{% extends 'core/base.html'%}
+{% load static %}
+
+{% block contenido %}
+{% load crispy_forms_tags %}
+
+<div class="container mt-5">
+    <div class="row">
+        <div class="col">
+            <form action="" method="POST" enctype="multipart/form-data">
+                {% csrf_token %}
+                <table>
+                    {{ form|crispy }}
+                </table>
+                <input type="submit" class="btn btn-success" value="Guardar">
+
+                <input type="reset" class="btn btn-danger" value="Limpiar">
+
+            </form>
+            {{ mensaje }}
+        </div>
+    </div>
+
+
+</div>
+   
+
+{% endblock %}

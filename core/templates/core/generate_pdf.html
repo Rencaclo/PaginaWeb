@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ title }}</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/5.1.0/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 20px;
+            color: #333;
+        }
+        .header, .footer {
+            text-align: center;
+            margin: 10px 0;
+        }
+        .header h1, .header h6 {
+            margin: 0;
+            padding: 5px;
+        }
+        .header h1 {
+            font-size: 28px;
+            color: #007bff;
+        }
+        .footer {
+            font-size: 12px;
+            color: #666;
+        }
+        .invoice {
+            border: 1px solid #ccc;
+            padding: 20px;
+            margin-bottom: 20px;
+            background-color: #f9f9f9;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        .details, .order, .total {
+            margin-bottom: 20px;
+        }
+        .details h2, .order h4, .total h2 {
+            margin: 0 0 10px;
+            color: #007bff;
+        }
+        .details h6, .order h4 {
+            margin: 0 0 5px;
+        }
+        .items th, .items td {
+            padding: 8px;
+            border: 1px solid #ddd;
+        }
+        .items th {
+            background-color: #007bff;
+            color: #fff;
+        }
+        .items td {
+            text-align: right;
+        }
+        .items td:first-child {
+            text-align: left;
+        }
+        .total h2 {
+            text-align: right;
+            margin: 0;
+            color: #007bff;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Obras</h1>
+            <h6>Dirección: Duoc UC Puente Alto</h6>
+            {% for orden in ordenes %}
+            <h6>Cliente: {{orden.usuario_producto}}</h6>
+            {% endfor %}
+        </div>
+        <div class="invoice">
+            {% for orden in ordenes %}
+            <div class="order">
+                <h4>Orden: {{ orden.id }} - Fecha: {{ orden.fecha_compra }}</h4>
+                <table class="items table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>Producto</th>
+                            <th>Precio Unitario</th>
+                            <th>Cantidad</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for producto in orden.productos_comprados %}
+                        <tr>
+                            <td>{{ producto.nombre_producto }}</td>
+                            <td>{{ producto.precio_producto }}</td>
+                            <td>{{ producto.cantidad }}</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+            {% endfor %}
+        <div class="footer">
+            <p>Gracias por su compra</p>
+            <p>Para más información, visite nuestro sitio web o contáctenos.</p>
+        </div>
+    </div>
+</body>
+</html>

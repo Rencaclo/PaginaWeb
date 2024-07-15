@@ -1,0 +1,26 @@
+{% extends 'core/base.html' %}
+{% load static %}
+
+{% block contenido %}
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalle de Usuario</title>
+</head>
+<body>
+    <h2>Detalle de Usuario</h2>
+    <div>
+        <p><strong>RUT:</strong> {{ usuario.rut }}</p>
+        <p><strong>Nombre:</strong> {{ usuario.nombre }}</p>
+        <p><strong>Apellido:</strong> {{ usuario.apellido }}</p>
+        <p><strong>Dirección:</strong> {{ usuario.direccion }}</p>
+        <p><strong>Teléfono:</strong> {{ usuario.telefono }}</p>
+        <p><strong>Correo Electrónico:</strong> {{ usuario.correo }}</p>
+    </div>
+</body>
+</html>
+
+
+
+{% endblock  %}

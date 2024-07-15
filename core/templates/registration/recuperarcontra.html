@@ -1,0 +1,14 @@
+{% extends 'core/base.html' %}
+{% block contenido %}
+
+<div class="container mt-5" style="margin-top: 450px;">
+    <form method="post">
+    {% csrf_token %}
+  
+  
+    <label for="email">Correo electrónico:</label>
+    <input type="email" name="email" id="email" required>
+    <input type="submit" value="Enviar instrucciones de restablecimiento">
+  </form></div>
+
+{% endblock %}

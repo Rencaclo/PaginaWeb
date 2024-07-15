@@ -1,0 +1,39 @@
+{% extends 'core/base.html'%}
+{% load static %}
+
+{% block contenido %}
+<div class="usuario-panel d-flex justify-content-center align-items-center">
+  <div class="text-center">
+      <h2 class="text-dark mt-5">Usuario</h2>
+      <div class="card mt-5" style="width: 18rem;">
+          <img src="{% static 'core/images/profile.jpg' %}" class="card-img-top" alt="Foto de perfil">
+          <div class="card-body">
+              <h5 class="card-title">Mi Cuenta</h5>
+              <ul class="list-group">
+                  <li><a href="{% url 'agregar' %}">Agregar</a></li>
+                  <li><a href="{% url 'product' %}">Modificar Productos</a></li>
+                  <li><a href="{% url 'logout' %}">Cerrar sesión</a></li>
+              </ul>
+          </div>
+      </div>
+  </div>
+</div>
+
+
+
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
